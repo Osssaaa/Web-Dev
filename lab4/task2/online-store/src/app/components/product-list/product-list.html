@@ -1,0 +1,38 @@
+<div class="container">
+  <h1>Каталог товаров Kaspi.kz</h1>
+  
+  <div class="products-grid">
+    @for (product of products; track product.id) {
+      <div class="product-card">
+        <a [href]="product.link" target="_blank" class="product-link">
+          <img [src]="product.image" [alt]="product.name" class="product-image">
+        </a>
+        
+        <div class="product-info">
+          <h3 class="product-name">{{ product.name }}</h3>
+          <p class="product-description">{{ product.description }}</p>
+          
+          <div class="product-rating">
+            @for (star of getStars(product.rating); track $index) {
+              <span class="star filled">★</span>
+            }
+            <span class="rating-text">{{ product.rating }}</span>
+          </div>
+          
+          <div class="product-price">
+            {{ product.price | number:'1.0-0' }} <span class="currency">₸</span>
+          </div>
+        </div>
+        
+        <div class="share-buttons">
+          <button (click)="shareWhatsApp(product)" class="share-btn whatsapp">
+            WhatsApp
+          </button>
+          <button (click)="shareTelegram(product)" class="share-btn telegram">
+            Telegram
+          </button>
+        </div>
+      </div>
+    }
+  </div>
+</div>
