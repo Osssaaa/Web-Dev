@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Albums</h1>
+  <div *ngIf="loading">Loading albums...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <ul *ngIf="!loading && !error">
+    <li *ngFor="let album of albums$ | async" class="album-item" (click)="goToAlbum(album.id)">
+      {{ album.id }}. {{ album.title }}
+      <button (click)="delete(album); $event.stopPropagation()">Delete</button>
+    </li>
+  </ul>
+</div>

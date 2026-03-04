@@ -1,0 +1,48 @@
+<div class="min-h-screen bg-slate-50 text-slate-900">
+  <nav class="sticky top-0 z-40 bg-white border-b border-slate-200 shadow-sm">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="flex items-center justify-between h-14">
+        <a
+          routerLink="/home"
+          class="flex items-center gap-2 text-sm font-semibold tracking-tight text-slate-900"
+        >
+          <span
+            class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-cyan-400/10 text-cyan-500 ring-1 ring-inset ring-cyan-400/40"
+            aria-hidden="true"
+          >
+            AB
+          </span>
+          <span class="hidden sm:inline">Album Browser</span>
+        </a>
+
+        <div class="flex items-center gap-2 sm:gap-4 text-sm">
+          <a
+            routerLink="/home"
+            routerLinkActive="font-semibold text-slate-900 border-b-2 border-cyan-400"
+            class="inline-flex items-center border-b-2 border-transparent px-2 py-1 text-slate-600 hover:text-slate-900 hover:border-slate-200 transition-colors"
+          >
+            Home
+          </a>
+          <a
+            routerLink="/about"
+            routerLinkActive="font-semibold text-slate-900 border-b-2 border-cyan-400"
+            class="inline-flex items-center border-b-2 border-transparent px-2 py-1 text-slate-600 hover:text-slate-900 hover:border-slate-200 transition-colors"
+          >
+            About
+          </a>
+          <a
+            routerLink="/albums"
+            routerLinkActive="font-semibold text-slate-900 border-b-2 border-cyan-400"
+            class="inline-flex items-center border-b-2 border-transparent px-2 py-1 text-slate-600 hover:text-slate-900 hover:border-slate-200 transition-colors"
+          >
+            Albums
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-5xl mx-auto px-4 py-6">
+    <router-outlet></router-outlet>
+  </main>
+</div>
